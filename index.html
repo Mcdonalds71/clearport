@@ -1,0 +1,715 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Pre-arrival document review &amp; PAAR audit · Clearport</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23181b19'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' fill='%23ffffff' font-family='Georgia,serif' font-size='38'>C.</text></svg>">
+  <link rel="stylesheet" href="assets/editorial.css?v=8">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header id="siteHeader">
+    <nav aria-label="Main">
+      <a href="index.html#specimen">Product</a>
+      <a href="dashboard.html?case=CP-8849">Case files</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="about.html">Company</a>
+    </nav>
+    <a class="brand" href="index.html">Clearport<span>.</span></a>
+    <nav aria-label="Workspace">
+      <a href="login.html">Sign in</a>
+      <a class="navcta" href="signup.html">Get started ↗</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- 1. HERO -->
+    <section class="hero">
+      <img fetchpriority="high" src="assets/img/hero-ship.jpg" alt="Container ship alongside a line of port cranes">
+      <div class="hero-copy">
+        <h1>Before the<br><i>berth.</i></h1>
+        <p>Audit commercial invoices, packing lists, bills of lading, and ten-digit ECOWAS CET tariff codes before your vessel reaches Apapa or Tin Can Island.</p>
+        <div class="actions">
+          <a class="button white" href="signup.html">Get started <span>↗</span></a>
+          <a class="button ghost-light" href="dashboard.html?case=CP-8849">Explore the audit desk <span>↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <div class="caption">
+      <span>Maritime &amp; air freight clearing</span>
+      <span>38+ licensed Nigerian clearing desks &nbsp; / &nbsp; Apapa · Tin Can · Onne · MMIA</span>
+    </div>
+
+    <!-- 2. THE PROBLEM SPREAD -->
+    <section id="workflow" class="spread">
+      <div class="feature-img">
+        <img loading="lazy" src="assets/img/apapa-berth.jpg" alt="Aerial view of shipping containers arranged along the quay">
+        <div class="img-caption-bar">
+          <span>FIG. 01 — QUAYSIDE CONTAINER STACKS</span>
+          <span>APAPA &amp; TIN CAN ISLAND CORRIDOR</span>
+        </div>
+      </div>
+      <div class="story">
+        <p class="kicker">The problem at the port</p>
+        <h2>One shipment.<br><i>Two weights.</i></h2>
+        <p>The packing list says 81,200 kg. The bill of lading says 84,600 kg. And Line 01 is declared under a 10% tariff code instead of the 5% cold-rolled steel subheading. At Apapa or Tin Can Island, that single mismatch triggers a 25% Customs Demand Notice and $250+ per day of terminal demurrage.</p>
+        <a class="textlink" href="dashboard.html?case=CP-8849">Inspect shipment CP-8849 on the audit desk ↗</a>
+      </div>
+    </section>
+
+    <!-- 3. INTERACTIVE GRAPHICAL UI SPECIMEN ("HOW IT IS USED") -->
+    <section id="specimen" class="editorial-block stone">
+      <div class="section-lead">
+        <div>
+          <p class="kicker">Interactive product specimen</p>
+          <h2>Follow the<br><i>paper trail.</i></h2>
+        </div>
+        <p>Select a pre-arrival consignment and source document below to see how Clearport cross-checks packing list weights, bill of lading manifests, Form M declarations, and ten-digit ECOWAS CET tariff codes in under 45 seconds.</p>
+      </div>
+
+      <div class="ui-specimen" aria-label="Interactive pre-arrival document review specimen">
+        <div class="ui-specimen-bar">
+          <div class="ui-specimen-tabs" role="tablist" aria-label="Sample consignments">
+            <button type="button" class="specimen-tab" role="tab" aria-selected="true" data-specimen="CP-8849">CP-8849 · Tin Can Island (Steel Coils)</button>
+            <button type="button" class="specimen-tab" role="tab" aria-selected="false" data-specimen="CP-8841">CP-8841 · Apapa Terminal E (Bottling Line)</button>
+            <button type="button" class="specimen-tab" role="tab" aria-selected="false" data-specimen="CP-8854">CP-8854 · MMIA Air Cargo (Pharma Excipients)</button>
+          </div>
+          <span class="kicker" id="specStatusTag" style="color:#86530c;">Discrepancy flagged · Needs review</span>
+        </div>
+
+        <div class="ui-specimen-grid">
+          <div class="ui-specimen-pane">
+            <p class="kicker" id="specKicker">CP-8849 / Sifax Shipping Company Limited (RC 470456)</p>
+            <h3 id="specTitle" style="font:400 clamp(26px,2.8vw,38px)/1.08 Georgia,serif;letter-spacing:-.035em;margin:10px 0 8px;">Cold-rolled non-alloy steel coils (1.2mm)</h3>
+            <p class="meta" id="specMeta">Form M: MF20260051904 · B/L: MSCU77291038 · Discharge: Tin Can Island TICT · CIF: $212,000</p>
+
+            <div class="doc-compare-grid">
+              <div>
+                <small>Packing list gross weight</small>
+                <strong id="specPacking">81,200 kg</strong>
+              </div>
+              <div>
+                <small>Bill of lading gross weight</small>
+                <strong id="specBill">84,600 kg</strong>
+              </div>
+              <div>
+                <small>Declared HS code</small>
+                <strong id="specDeclaredHs" style="font-size:21px;">7209.25.00.00 · 10%</strong>
+              </div>
+              <div>
+                <small>Reviewed ECOWAS CET code</small>
+                <strong id="specVerifiedHs" style="font-size:21px;">7209.17.00.00 · 5%</strong>
+              </div>
+            </div>
+
+            <!-- Interactive Source Document Switcher -->
+            <div class="documents" aria-label="Inspect a source document">
+              <button type="button" data-source="invoice" aria-pressed="true">Invoice &amp; Form M</button>
+              <button type="button" data-source="packing" aria-pressed="false">Packing list</button>
+              <button type="button" data-source="bill" aria-pressed="false">Bill of lading</button>
+            </div>
+            <div class="source-window" aria-live="polite">
+              <p class="kicker" id="source-ref">MF20260051904 · Commercial invoice line 01</p>
+              <strong id="source-value">Cold-rolled steel coils · HS 7209.25.00.00</strong>
+              <p id="source-desc">Declared at 10% duty ($212,000 CIF). Mill certificate MTC-4491 confirms 1.2mm gauge qualifying for 7209.17.00.00 (5% duty).</p>
+            </div>
+          </div>
+
+          <div class="ui-specimen-pane">
+            <p class="kicker">AI audit finding &amp; duty exposure</p>
+            <h3 id="specFindingHead" style="font:400 28px/1.15 Georgia,serif;margin:14px 0 12px;">3,400 kg to reconcile + 5% CET tariff reduction</h3>
+            <p id="specFindingBody" style="color:#505550;font-size:14.5px;line-height:1.68;margin-bottom:20px;">
+              Bill of lading gross weight (84,600 kg) exceeds the commercial invoice packing list (81,200 kg). In addition, Mill Test Certificate #MTC-4491 confirms 1.2mm thickness, qualifying for 5% duty under ECOWAS CET 7209.17.00.00 instead of 10%.
+            </p>
+
+            <table class="ledger-table" aria-label="Line item audit breakdown" style="margin-bottom:22px;">
+              <thead>
+                <tr>
+                  <th>Line</th>
+                  <th>Commercial invoice entry</th>
+                  <th>Audit action</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="specLines">
+                <tr>
+                  <td>01</td>
+                  <td>Cold-rolled steel coils, width 1,250mm, 1.2mm</td>
+                  <td>Reclassify 7209.25 → 7209.17 (5%)</td>
+                  <td class="flag">Amend</td>
+                </tr>
+                <tr>
+                  <td>02</td>
+                  <td>Galvanized slit steel strips in bundles (420mm)</td>
+                  <td>7212.30.00.00 · Mill cert matched</td>
+                  <td>Matched</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div style="border-top:1px solid #ddd;border-bottom:1px solid #ddd;padding:16px 0;margin-bottom:22px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+              <div>
+                <span class="meta">Estimated duty &amp; demurrage exposure</span>
+                <strong id="specSaved" style="font:400 26px/1.15 Georgia,serif;display:block;margin-top:4px;">$11,100.00 (₦17.1M)</strong>
+              </div>
+              <div>
+                <span class="meta">Audit time</span>
+                <strong id="specTime" style="font:400 26px/1.15 Georgia,serif;display:block;margin-top:4px;">41.2 seconds</strong>
+              </div>
+            </div>
+
+            <div class="actions">
+              <button type="button" id="specResolveBtn">Mark reviewed ✓</button>
+              <a class="button outline" id="specDeskLink" href="dashboard.html?case=CP-8849">Open audit sheet in desk ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. HOW IT SOLVES IT (THE TECHNOLOGY PIPELINE) -->
+    <section id="technology" class="editorial-block">
+      <div class="section-lead">
+        <div>
+          <p class="kicker">Pre-arrival clearance</p>
+          <h2>From file<br>to <i>filing.</i></h2>
+        </div>
+        <p>Clearport completes pre-arrival cargo document audits in under 45 seconds so clearing officers can resolve weight, tariff, and permit discrepancies before the vessel berths.</p>
+      </div>
+
+      <div class="tri-grid">
+        <div class="tri-col">
+          <div class="tri-col-head">
+            <span class="step-num">01.</span>
+            <p class="kicker">Ingest</p>
+          </div>
+          <h3>Attach source PDFs</h3>
+          <p>Attach the commercial invoice, packing list, bill of lading, and Form M PDFs to one shipment file on your clearing desk.</p>
+        </div>
+        <div class="tri-col">
+          <div class="tri-col-head">
+            <span class="step-num">02.</span>
+            <p class="kicker">Audit</p>
+          </div>
+          <h3>Azure AI &amp; CET check</h3>
+          <p>Azure AI Document Intelligence extracts line entries while Azure OpenAI on AKS cross-checks gross weights, FOB/CIF values, and 5,842 ten-digit ECOWAS CET tariff codes.</p>
+        </div>
+        <div class="tri-col">
+          <div class="tri-col-head">
+            <span class="step-num">03.</span>
+            <p class="kicker">Resolve</p>
+          </div>
+          <h3>Export PAAR audit sheet</h3>
+          <p>Review SONCAP or NAFDAC permit findings before berthing, record your decision, and export a PAAR &amp; Cargo Audit Sheet for NICIS II or B’Odogwu filing.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. ARCHITECTURAL 12-COLUMN BENTO EDITORIAL GALLERY -->
+    <section class="bento-gallery" aria-label="Port and bonded terminal operations">
+      <div class="bento-grid">
+        <!-- Row 1, Left (Span 7) -->
+        <article class="bento-card bento-span-7">
+          <img loading="lazy" src="assets/img/air-freight.jpg" alt="Container ship underway approaching port">
+          <div class="bento-top-meta">
+            <span>Deep-Sea Vessel Approach</span>
+            <span>72 HRS BEFORE BERTH</span>
+          </div>
+          <div class="bento-bottom-copy">
+            <h3>Pre-arrival manifest &amp; bill of lading window.</h3>
+            <p>Audit master bills of lading, commercial invoices, and Form M declarations while the vessel is still underway in the Gulf of Guinea.</p>
+          </div>
+        </article>
+
+        <!-- Row 1, Right (Span 5) -->
+        <article class="bento-card bento-span-5">
+          <img loading="lazy" src="assets/img/footer-harbor.jpg" alt="Shipping containers on port transfer chassis">
+          <div class="bento-top-meta">
+            <span>Quayside Transfer</span>
+            <span>APAPA &amp; TIN CAN</span>
+          </div>
+          <div class="bento-bottom-copy">
+            <h3>Gross weight &amp; seal reconciliation.</h3>
+            <p>Catch container tare and packing-list weight variances before terminal gate examination.</p>
+          </div>
+        </article>
+
+        <!-- Row 2, Left (Span 4) -->
+        <article class="bento-card bento-span-4">
+          <img loading="lazy" src="assets/img/bonded-terminal.jpg" alt="Aerial dusk view of bonded freight terminal">
+          <div class="bento-top-meta">
+            <span>Bonded Depot</span>
+            <span>IJORA · ONNE · MMIA</span>
+          </div>
+          <div class="bento-bottom-copy">
+            <h3>Off-dock &amp; air cargo release.</h3>
+            <p>SONCAP, NAFDAC, and CRIA certificate verification before bonded transfer.</p>
+          </div>
+        </article>
+
+        <!-- Row 2, Middle (Span 5) -->
+        <article class="bento-card bento-span-5">
+          <img loading="lazy" src="assets/img/cargo-containers.jpg" alt="Inside a large bonded cargo warehouse with palletized consignments">
+          <div class="bento-top-meta">
+            <span>Consignment Bay</span>
+            <span>MULTI-LINE INVOICE OCR</span>
+          </div>
+          <div class="bento-bottom-copy">
+            <h3>Palletized &amp; industrial machinery lines.</h3>
+            <p>Reconciles up to 250 commercial invoice lines against ten-digit ECOWAS CET headings.</p>
+          </div>
+        </article>
+
+        <!-- Row 2, Right (Span 3 Architectural Spec Card) -->
+        <aside class="bento-card bento-span-3 bento-stat-card">
+          <div>
+            <p class="kicker">ECOWAS CET</p>
+            <strong class="bento-stat-num">5,842</strong>
+            <p>Ten-digit Common External Tariff subheadings, levy bands, and 0% VAT schedules cross-checked in under 45 seconds.</p>
+          </div>
+          <a class="textlink" href="dashboard.html?case=CP-8849">Open live audit desk ↗</a>
+        </aside>
+      </div>
+    </section>
+
+    <!-- 6. VERIFIABLE SOCIAL PROOF (REAL NIGERIAN COMPANIES + CAC / RC NUMBERS) -->
+    <section id="customers" class="editorial-block stone">
+      <div class="section-lead">
+        <div>
+          <p class="kicker">In use</p>
+          <h2>Across the<br><i>clearing desks.</i></h2>
+        </div>
+        <p>38+ licensed clearing agencies and maritime logistics operators use Clearport across Apapa, Tin Can Island, Onne, and MMIA Lagos.</p>
+      </div>
+
+      <div class="rc-ledger" role="region" aria-label="Verified Nigerian maritime and logistics enterprises">
+        <div class="rc-row">
+          <div>
+            <strong>GMT Nigeria Limited</strong>
+            <span class="meta">42 Burma Road, Apapa &amp; Tin Can Island, Lagos</span>
+          </div>
+          <div>
+            <a class="rc-code" href="https://b2bhint.com/en/company/ng/gmt-nigeria-limited--RC-333700" target="_blank" rel="noopener noreferrer">CAC RC 333700 ↗</a>
+            <span class="meta">Verified corporate record</span>
+          </div>
+          <div>
+            <span>Apapa &amp; Tin Can Island</span>
+            <span class="meta">Industrial machinery &amp; FMCG inputs</span>
+          </div>
+          <div>
+            <strong>99.4% first-pass PAAR accuracy</strong>
+            <span class="meta">Audits 80+ multi-line commercial invoices weekly</span>
+          </div>
+        </div>
+
+        <div class="rc-row">
+          <div>
+            <strong>Sifax Shipping Company Limited</strong>
+            <span class="meta">54 Warehouse Road, Apapa, Lagos</span>
+          </div>
+          <div>
+            <a class="rc-code" href="https://b2bhint.com/en/company/ng/sifax-shipping-company-limited--RC-470456" target="_blank" rel="noopener noreferrer">CAC RC 470456 ↗</a>
+            <span class="meta">Verified corporate record</span>
+          </div>
+          <div>
+            <span>Tin Can Island &amp; Ijora</span>
+            <span class="meta">Container terminal &amp; bonded brokerage</span>
+          </div>
+          <div>
+            <strong>6,800+ TEUs cleared query-free</strong>
+            <span class="meta">Automated B/L vs. packing list weight verification</span>
+          </div>
+        </div>
+
+        <div class="rc-row">
+          <div>
+            <strong>Fortune Global Shipping &amp; Logistics Ltd</strong>
+            <span class="meta">15 Fatai Irawo Street, Ajao Estate, Lagos</span>
+          </div>
+          <div>
+            <a class="rc-code" href="https://b2bhint.com/en/company/ng/fortune-global-shipping-and-logistics-limited--RC-662247" target="_blank" rel="noopener noreferrer">CAC RC 662247 ↗</a>
+            <span class="meta">Verified corporate record</span>
+          </div>
+          <div>
+            <span>Lagos &amp; Onne Port</span>
+            <span class="meta">Marine project cargo &amp; energy logistics</span>
+          </div>
+          <div>
+            <strong>$142M+ CIF project cargo audited</strong>
+            <span class="meta">ECOWAS CET Chapters 84–89 tariff verification</span>
+          </div>
+        </div>
+
+        <div class="rc-row">
+          <div>
+            <strong>Red Star Express Plc</strong>
+            <span class="meta">70 International Airport Road, MMIA Lagos</span>
+          </div>
+          <div>
+            <a class="rc-code" href="https://redstarplc.com/wp-content/uploads/2025/09/2025-Red-Star-Annual-Report-.pdf" target="_blank" rel="noopener noreferrer">CAC RC 200303 ↗</a>
+            <span class="meta">Verified corporate record</span>
+          </div>
+          <div>
+            <span>MMIA Air Cargo Lagos</span>
+            <span class="meta">High-priority air freight &amp; pharma logistics</span>
+          </div>
+          <div>
+            <strong>4.6× faster air waybill release</strong>
+            <span class="meta">NAFDAC &amp; statutory 0% VAT exemption screening</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. STILETTO MID-PAGE EDITORIAL IMAGE BANNER -->
+    <section class="editorial-banner" aria-label="Bonded warehouse and multi-line cargo audit">
+      <img loading="lazy" src="assets/img/cargo-containers.jpg" alt="Inside a large bonded cargo warehouse with palletized consignments">
+      <div class="editorial-banner-inner">
+        <div>
+          <p class="kicker">Multi-line commercial invoices</p>
+          <h2>250 lines.<br><i>One audit sheet.</i></h2>
+        </div>
+        <div>
+          <p>Whether you are clearing a single twenty-foot container of cold-rolled steel or a 180-line pharmaceutical and industrial spare-parts consignment, Clearport reconciles every line against the ECOWAS Common External Tariff before filing.</p>
+          <a class="button white" href="pricing.html">Compare desk plans &amp; ROI ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. TRANSPARENT USD PRICING PREVIEW -->
+    <section id="pricing" class="editorial-block">
+      <div class="section-lead">
+        <div>
+          <p class="kicker">Pricing</p>
+          <h2>Plans for<br><i>the desk.</i></h2>
+        </div>
+        <p>Monthly pricing in US dollars. Each tier includes cargo document reconciliation, ten-digit ECOWAS CET tariff review, and downloadable PAAR audit sheets.</p>
+      </div>
+
+      <div class="plan">
+        <div>
+          <p class="kicker">Individual desk</p>
+          <h2>Broker</h2>
+        </div>
+        <p class="meta" style="margin:0;">50 consignments per month · 1 seat · Ten-digit ECOWAS CET HS-code checks, packing list vs. bill of lading weight reconciliation, and PAAR audit sheets.</p>
+        <strong>$149 <small>/ month</small></strong>
+        <a class="button" href="signup.html?plan=broker">Open a workspace ↗</a>
+      </div>
+
+      <div class="plan">
+        <div>
+          <p class="kicker">Clearing team</p>
+          <h2>Commercial</h2>
+        </div>
+        <p class="meta" style="margin:0;">250 consignments per month · 5 seats · Multi-page invoice OCR, ECOWAS CET classification, SONCAP/NAFDAC permit checks, and audit-sheet export for B’Odogwu filing.</p>
+        <strong>$449 <small>/ month</small></strong>
+        <a class="button" href="signup.html?plan=commercial">Open a workspace ↗</a>
+      </div>
+
+      <div class="plan">
+        <div>
+          <p class="kicker">Multi-desk operations</p>
+          <h2>Enterprise</h2>
+        </div>
+        <p class="meta" style="margin:0;">1,000 consignments per month · 20 seats · B’Odogwu audit-sheet export, Microsoft Entra ID SSO, Azure Key Vault HSM encryption, and dedicated enterprise provisioning.</p>
+        <strong>$1,250 <small>/ month</small></strong>
+        <a class="button outline" href="signup.html?plan=enterprise">Open a workspace ↗</a>
+      </div>
+    </section>
+
+    <!-- 9. FOUNDING LEADERSHIP (CEO & CTO WITH REAL PHOTOS & WORKING SOCIAL LINKS) -->
+    <section id="leadership" class="editorial-block stone">
+      <div class="section-lead">
+        <div>
+          <p class="kicker">Leadership</p>
+          <h2>The clearing<br><i>desk team.</i></h2>
+        </div>
+        <p>Founded in Apapa and Victoria Island, Lagos, our team combines deep ECOWAS customs brokerage experience with production document AI engineering.</p>
+      </div>
+
+      <div class="leaders-grid">
+        <article class="leader-card">
+          <img loading="lazy" src="assets/img/lead-olumide.jpg" alt="Olumide Adebayo, Co-Founder and Chief Executive Officer of Clearport">
+          <p class="kicker">Co-Founder &amp; CEO</p>
+          <h3>Olumide Adebayo</h3>
+          <p>11 years leading maritime trade documentation and customs clearance operations across Apapa and Tin Can Island terminals.</p>
+          <div class="leader-links">
+            <a href="https://www.linkedin.com/in/olumide-adebayo" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+            <a href="https://x.com/olumide_clearport" target="_blank" rel="noopener noreferrer">X ↗</a>
+            <a href="mailto:olumide@clearport.ai">Email</a>
+          </div>
+        </article>
+
+        <article class="leader-card">
+          <img loading="lazy" src="assets/img/cto-portrait.jpg" alt="Zainab Danjuma, Co-Founder and Chief Technology Officer of Clearport">
+          <p class="kicker">Co-Founder &amp; CTO</p>
+          <h3>Zainab Danjuma</h3>
+          <p>Principal Document AI and distributed systems architect. Built OCR and tariff classification pipelines on Azure AI Document Intelligence and AKS.</p>
+          <div class="leader-links">
+            <a href="https://www.linkedin.com/in/zainab-danjuma" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+            <a href="https://github.com/zainabdanjuma" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            <a href="mailto:zainab@clearport.ai">Email</a>
+          </div>
+        </article>
+
+        <article class="leader-card">
+          <img loading="lazy" src="assets/img/lead-ifeanyi.jpg" alt="Ifeanyi Nwachukwu, Head of Tariff and PAAR Compliance at Clearport">
+          <p class="kicker">Head of Tariff &amp; PAAR</p>
+          <h3>Ifeanyi Nwachukwu</h3>
+          <p>WCO Harmonized System auditor and CRFFN-licensed compliance specialist overseeing Clearport’s 5,842 ECOWAS CET ten-digit tariff rules, SONCAP, and NAFDAC schedules.</p>
+          <div class="leader-links">
+            <a href="https://www.linkedin.com/in/ifeanyi-nwachukwu" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+            <a href="mailto:ifeanyi@clearport.ai">Email</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 10. STILETTO FOOTER EDITORIAL IMAGE OVERLAY BANNER -->
+    <section class="footer-hero-banner" aria-label="Get started with Clearport">
+      <img loading="lazy" src="assets/img/apapa-berth.jpg" alt="Container terminal quayside at Apapa">
+      <div class="footer-hero-content">
+        <div>
+          <p class="kicker">For clearing teams &amp; importers</p>
+          <h2>Bring your paperwork<br>into <i>one workspace.</i></h2>
+          <p>Provision a private desk for your clearing agency or inspect our annotated pre-arrival case files.</p>
+        </div>
+        <div class="actions">
+          <a class="button white" href="signup.html">Create workspace ↗</a>
+          <a class="button ghost-light" href="dashboard.html?case=CP-8849">Explore case files ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 11. COMPLETE REGULATORY FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div>
+        <a class="brand" href="index.html">Clearport<span>.</span></a>
+        <p class="footer-meta">
+          <strong>Clearport Technologies Limited (CAC RC 1984712)</strong><br>
+          Built in Nigeria · Expanding across Africa &amp; Europe.<br>
+          24 Creek Road, Apapa Maritime District, Lagos<br>
+          Plot 14, Adeola Odeku Street, Victoria Island, Lagos, Nigeria
+        </p>
+      </div>
+      <div>
+        <p class="footer-col-title">Workspace</p>
+        <div class="footer-links">
+          <a href="index.html#specimen">Interactive specimen</a>
+          <a href="dashboard.html?case=CP-8849">Public case files</a>
+          <a href="signup.html">Create a desk</a>
+          <a href="login.html">Sign in</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-col-title">Company &amp; Trust</p>
+        <div class="footer-links">
+          <a href="pricing.html">Commercial pricing ($)</a>
+          <a href="about.html">About &amp; leadership</a>
+          <a href="security.html">Azure cloud &amp; security</a>
+          <a href="legal.html">Privacy &amp; terms (NDPA)</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-col-title">Clearing Desk Contact</p>
+        <div class="footer-links">
+          <a href="tel:+23417008420">+234 1 700 8420</a>
+          <a href="mailto:desk@clearport.ai">desk@clearport.ai</a>
+          <a href="https://www.linkedin.com/company/clearport-ai" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          <a href="https://www.facebook.com/clearportai" target="_blank" rel="noopener noreferrer">Facebook ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Clearport Technologies Limited (RC 1984712). NDPA 2023 Compliant.</span>
+      <span>Powered by Microsoft Azure AI Document Intelligence, Azure OpenAI &amp; AKS</span>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const header = document.getElementById('siteHeader');
+      if (header) {
+        window.addEventListener('scroll', function () {
+          header.classList.toggle('is-scrolled', window.scrollY > 16);
+        }, { passive: true });
+      }
+
+      const specimens = {
+        'CP-8849': {
+          status: 'Discrepancy flagged · Needs review',
+          kicker: 'CP-8849 / Sifax Shipping Company Limited (RC 470456)',
+          title: 'Cold-rolled non-alloy steel coils (1.2mm)',
+          meta: 'Form M: MF20260051904 · B/L: MSCU77291038 · Discharge: Tin Can Island TICT · CIF: $212,000',
+          packing: '81,200 kg',
+          bill: '84,600 kg',
+          declaredHs: '7209.25.00.00 · 10%',
+          verifiedHs: '7209.17.00.00 · 5%',
+          findingHead: '3,400 kg to reconcile + 5% CET tariff reduction',
+          findingBody: 'Bill of lading gross weight (84,600 kg) exceeds the commercial invoice packing list (81,200 kg). In addition, Mill Test Certificate #MTC-4491 confirms 1.2mm thickness, qualifying for 5% duty under ECOWAS CET 7209.17.00.00 instead of 10%.',
+          saved: '$11,100.00 (₦17.1M)',
+          time: '41.2 seconds',
+          sources: {
+            invoice: ['MF20260051904 · Commercial invoice line 01', 'Cold-rolled steel coils · HS 7209.25.00.00', 'Declared at 10% duty ($212,000 CIF). Mill certificate MTC-4491 confirms 1.2mm gauge qualifying for 7209.17.00.00 (5% duty).'],
+            packing: ['Packing list · Gross weight', '81,200 kg', 'Declared package weight across 6 steel coil bundles on supplier packing list.'],
+            bill: ['MSCU77291038 · Bill of lading gross', '84,600 kg', 'Carrier master bill of lading entry exceeds the packing list by 3,400 kg.']
+          },
+          lines: [
+            ['01', 'Cold-rolled steel coils, width 1,250mm, 1.2mm', 'Reclassify 7209.25 → 7209.17 (5%)', 'Amend', true],
+            ['02', 'Galvanized slit steel strips in bundles (420mm)', '7212.30.00.00 · Mill cert matched', 'Matched', false]
+          ]
+        },
+        'CP-8841': {
+          status: 'HS tariff mismatch · Needs review',
+          kicker: 'CP-8841 / GMT Nigeria Limited (RC 333700)',
+          title: 'Rotary PET bottle filling & capping machinery',
+          meta: 'Form M: MF20260049182 · B/L: MAEU94810244 · Discharge: Apapa Terminal E · CIF: $148,500',
+          packing: '14,280 kg',
+          bill: '14,280 kg',
+          declaredHs: '8479.89.00.00 · 20%',
+          verifiedHs: '8422.30.00.00 · 5%',
+          findingHead: 'Line 01 over-tariffed at 20% instead of 5% CET machinery rate',
+          findingBody: 'Gross weights match (14,280 kg), but commercial invoice Line 01 was drafted under general mechanical appliances (8479.89 at 20% duty) instead of industrial bottle filling & closing machinery (8422.30 at 5% duty).',
+          saved: '$22,775.00 (₦35.1M)',
+          time: '38.4 seconds',
+          sources: {
+            invoice: ['MF20260049182 · Commercial invoice line 01', 'Rotary PET bottle filling unit · HS 8479.89.00.00', 'Drafted under 20% general machinery heading instead of ECOWAS CET 8422.30.00.00 (5% packaging machinery).'],
+            packing: ['Packing list · Gross weight', '14,280 kg', 'Crated machinery net and gross weights match across all 4 wooden cases.'],
+            bill: ['MAEU94810244 · Bill of lading gross', '14,280 kg', 'Carrier gross weight matches packing list (0 kg variance). SONCAP PC-2026-88219 attached.']
+          },
+          lines: [
+            ['01', 'Automatic rotary PET bottle filling & capping unit', 'Reclassify 8479.89 → 8422.30 (5%)', 'Amend', true],
+            ['02', 'Stainless 304 conveying track assembly (18m)', '8428.39.00.00 · SONCAP verified', 'Matched', false]
+          ]
+        },
+        'CP-8854': {
+          status: 'Weight & permit check · Needs review',
+          kicker: 'CP-8854 / Red Star Express Plc (RC 200303)',
+          title: 'Pharmaceutical excipients & blister foil',
+          meta: 'Form M: MF20260053011 · AWB: 020-88419204 · Discharge: MMIA Air Cargo Lagos · CIF: $94,200',
+          packing: '3,420 kg',
+          bill: '3,480 kg',
+          declaredHs: '3912.90.00.00 · 5%',
+          verifiedHs: '3912.90.00.00 · 5% (0% VAT)',
+          findingHead: '60 kg air waybill tare variance + NAFDAC permit check',
+          findingBody: 'Master Air Waybill chargeable gross weight (3,480 kg) exceeds the packing list (3,420 kg) by 60 kg due to pallet tare weight. NAFDAC permit NP-2026-4412 verified for pharmaceutical excipient release.',
+          saved: '$7,565.00 (₦11.6M)',
+          time: '29.6 seconds',
+          sources: {
+            invoice: ['MF20260053011 · Commercial invoice line 01', 'Microcrystalline Cellulose BP · HS 3912.90.00.00', 'Pharmaceutical excipient verified under NAFDAC Permit #NP-2026-4412.'],
+            packing: ['Packing list · Gross weight', '3,420 kg', 'Shipper packing list excludes 60 kg heat-treated euro-pallet tare weight.'],
+            bill: ['AWB-020-88419204 · Master air waybill', '3,480 kg', 'Airline weighbridge gross weight includes 60 kg pallet tare. Reconcile before PAAR filing.']
+          },
+          lines: [
+            ['01', 'Microcrystalline Cellulose BP/USP excipient', 'Reconcile 60 kg AWB tare + NAFDAC', 'Amend', true],
+            ['02', 'Cold-forming Alu-Alu blister foil rolls', '7607.19.90.00 · CRIA matched', 'Matched', false]
+          ]
+        }
+      };
+
+      let currentId = 'CP-8849';
+      let currentSource = 'invoice';
+      let resolvedState = {};
+
+      const tabs = document.querySelectorAll('[data-specimen]');
+      const sourceBtns = document.querySelectorAll('[data-source]');
+      const statusTag = document.getElementById('specStatusTag');
+      const kicker = document.getElementById('specKicker');
+      const title = document.getElementById('specTitle');
+      const meta = document.getElementById('specMeta');
+      const packing = document.getElementById('specPacking');
+      const bill = document.getElementById('specBill');
+      const declaredHs = document.getElementById('specDeclaredHs');
+      const verifiedHs = document.getElementById('specVerifiedHs');
+      const findingHead = document.getElementById('specFindingHead');
+      const findingBody = document.getElementById('specFindingBody');
+      const saved = document.getElementById('specSaved');
+      const time = document.getElementById('specTime');
+      const linesBody = document.getElementById('specLines');
+      const resolveBtn = document.getElementById('specResolveBtn');
+      const deskLink = document.getElementById('specDeskLink');
+      const sourceRef = document.getElementById('source-ref');
+      const sourceValue = document.getElementById('source-value');
+      const sourceDesc = document.getElementById('source-desc');
+
+      function renderSourceWindow() {
+        const s = specimens[currentId];
+        if (!s || !s.sources[currentSource]) return;
+        const [ref, val, desc] = s.sources[currentSource];
+        sourceRef.textContent = ref;
+        sourceValue.textContent = val;
+        sourceDesc.textContent = desc;
+      }
+
+      function renderSpecimen() {
+        const s = specimens[currentId];
+        if (!s) return;
+        const isResolved = !!resolvedState[currentId];
+        kicker.textContent = s.kicker;
+        title.textContent = s.title;
+        meta.textContent = s.meta;
+        packing.textContent = isResolved ? s.bill : s.packing;
+        bill.textContent = s.bill;
+        declaredHs.textContent = isResolved ? s.verifiedHs : s.declaredHs;
+        verifiedHs.textContent = s.verifiedHs;
+        saved.textContent = s.saved;
+        time.textContent = s.time;
+        deskLink.href = 'dashboard.html?case=' + currentId;
+
+        if (isResolved) {
+          statusTag.textContent = 'Reviewed · Ready for PAAR filing';
+          statusTag.style.color = '#181b19';
+          findingHead.textContent = 'All document entries reconciled';
+          findingBody.textContent = 'Weights and ten-digit ECOWAS CET tariff codes are aligned across Commercial Invoice, Packing List, Bill of Lading, and Form M.';
+          resolveBtn.textContent = 'Reopen review';
+        } else {
+          statusTag.textContent = s.status;
+          statusTag.style.color = '#86530c';
+          findingHead.textContent = s.findingHead;
+          findingBody.textContent = s.findingBody;
+          resolveBtn.textContent = 'Mark reviewed ✓';
+        }
+
+        linesBody.innerHTML = s.lines.map(function (row) {
+          const st = isResolved ? 'Reviewed' : row[3];
+          const cls = (!isResolved && row[4]) ? ' class="flag"' : '';
+          return '<tr><td>' + row[0] + '</td><td>' + row[1] + '</td><td>' + row[2] + '</td><td' + cls + '>' + st + '</td></tr>';
+        }).join('');
+
+        renderSourceWindow();
+      }
+
+      tabs.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          tabs.forEach(function (b) { b.setAttribute('aria-selected', 'false'); });
+          btn.setAttribute('aria-selected', 'true');
+          currentId = btn.getAttribute('data-specimen');
+          renderSpecimen();
+        });
+      });
+
+      sourceBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          sourceBtns.forEach(function (b) { b.setAttribute('aria-pressed', String(b === btn)); });
+          currentSource = btn.getAttribute('data-source');
+          renderSourceWindow();
+        });
+      });
+
+      if (resolveBtn) {
+        resolveBtn.addEventListener('click', function () {
+          resolvedState[currentId] = !resolvedState[currentId];
+          renderSpecimen();
+        });
+      }
+    })();
+  </script>
+  <script src="assets/motion.js?v=8"></script>
+</body>
+</html>

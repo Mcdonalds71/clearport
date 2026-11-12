@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Shipment workspace · Clearport</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23181b19'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' fill='%23ffffff' font-family='Georgia,serif' font-size='38'>C.</text></svg>">
+  <link rel="stylesheet" href="assets/editorial.css?v=8">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header id="siteHeader">
+    <nav aria-label="Main">
+      <a href="index.html#specimen">Product</a>
+      <a href="dashboard.html?case=CP-8849">Case files</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="about.html">Company</a>
+    </nav>
+    <a class="brand" href="index.html">Clearport<span>.</span></a>
+    <nav aria-label="Workspace" id="workspaceNav">
+      <a href="login.html" id="navSignIn">Sign in</a>
+      <a class="navcta" href="signup.html" id="navGetStarted">Get started ↗</a>
+      <button id="logout" class="outline" style="padding:10px 16px;font-size:13px;" hidden>Sign out</button>
+    </nav>
+  </header>
+
+  <main id="main">
+    <div class="desk">
+      <div class="desk-head">
+        <div>
+          <p class="kicker" id="deskKicker">Pre-arrival review</p>
+          <h1>Shipment desk</h1>
+        </div>
+        <div class="actions">
+          <a class="button" href="signup.html" id="publicCreateCta" hidden>Create workspace to add shipments ↗</a>
+          <button id="new" hidden>New shipment +</button>
+        </div>
+      </div>
+
+      <div class="totals" id="totals"></div>
+
+      <div class="workgrid">
+        <section class="queue">
+          <h2>Shipments</h2>
+          <label class="field">Find a shipment
+            <input id="search" type="search" placeholder="Search cargo, port or reference">
+          </label>
+          <label class="field">Status
+            <select id="filter">
+              <option>All shipments</option>
+              <option>Needs review</option>
+              <option>Reviewed</option>
+              <option>Matched</option>
+            </select>
+          </label>
+          <div id="rows"></div>
+        </section>
+
+        <section class="inspector" aria-label="Shipment detail" id="detail"></section>
+      </div>
+
+      <p class="note" id="message" role="status"></p>
+    </div>
+
+    <dialog id="formbox">
+      <form id="shipmentForm">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:8px;">
+          <p class="kicker" style="margin:0;">Document comparison</p>
+          <button type="button" id="prefillBtn" class="outline" style="padding:6px 12px;font-size:12px;">Fill sample entry</button>
+        </div>
+        <h2>New shipment</h2>
+        <label>Cargo description
+          <input name="cargo" required maxlength="80">
+        </label>
+        <label>Port or terminal
+          <input name="port" required maxlength="80">
+        </label>
+        <label>Packing list gross weight (kg)
+          <input type="number" name="packing" required min="0.01" max="999999999" step=".01">
+        </label>
+        <label>Bill of lading gross weight (kg)
+          <input type="number" name="bill" required min="0.01" max="999999999" step=".01">
+        </label>
+
+        <details>
+          <summary>Customs references &amp; valuation</summary>
+          <label>Importer
+            <input name="importer" maxlength="160">
+          </label>
+          <label>CAC RC number
+            <input name="rc" maxlength="160">
+          </label>
+          <label>Form M reference
+            <input name="formM" maxlength="160">
+          </label>
+          <label>Bill of lading reference
+            <input name="bl" maxlength="160">
+          </label>
+          <label>Declared ten-digit HS code
+            <input name="declared" maxlength="160" placeholder="e.g. 7209.25.00.00">
+          </label>
+          <label>Reviewed ten-digit HS code
+            <input name="verified" maxlength="160" placeholder="e.g. 7209.17.00.00">
+          </label>
+          <label>FOB value (USD)
+            <input name="fob" type="number" min="0" step=".01">
+          </label>
+          <label>CIF value (USD)
+            <input name="cif" type="number" min="0" step=".01">
+          </label>
+          <label>Declared duty (%)
+            <input name="before" type="number" min="0" step=".01">
+          </label>
+          <label>Reviewed duty (%)
+            <input name="after" type="number" min="0" step=".01">
+          </label>
+          <label>Potential days of delay
+            <input name="days" type="number" min="0" step=".01">
+          </label>
+          <label>Daily demurrage (USD)
+            <input name="daily" type="number" min="0" step=".01">
+          </label>
+          <label>SONCAP / NAFDAC permit reference
+            <input name="permit" maxlength="160">
+          </label>
+        </details>
+
+        <p id="formError" role="alert" class="flag"></p>
+        <div class="actions">
+          <button type="submit">Compare documents</button>
+          <button class="outline" type="button" id="cancel">Cancel</button>
+        </div>
+      </form>
+    </dialog>
+
+    <section class="footer-hero-banner" aria-label="Get started with Clearport">
+      <img loading="lazy" src="assets/img/apapa-berth.jpg" alt="Container terminal quayside at Apapa">
+      <div class="footer-hero-content">
+        <div>
+          <p class="kicker">For clearing teams &amp; importers</p>
+          <h2>Bring your paperwork<br>into <i>one workspace.</i></h2>
+          <p>Provision a private desk for your clearing agency or inspect our annotated pre-arrival case files.</p>
+        </div>
+        <div class="actions">
+          <a class="button white" href="signup.html">Create workspace ↗</a>
+          <a class="button ghost-light" href="dashboard.html?case=CP-8849">Explore case files ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-top">
+      <div>
+        <a class="brand" href="index.html">Clearport<span>.</span></a>
+        <p class="footer-meta">
+          <strong>Clearport Technologies Limited (CAC RC 1984712)</strong><br>
+          Built in Nigeria · Expanding across Africa &amp; Europe.<br>
+          24 Creek Road, Apapa Maritime District, Lagos<br>
+          Plot 14, Adeola Odeku Street, Victoria Island, Lagos, Nigeria
+        </p>
+      </div>
+      <div>
+        <p class="footer-col-title">Workspace</p>
+        <div class="footer-links">
+          <a href="index.html#specimen">Interactive specimen</a>
+          <a href="dashboard.html?case=CP-8849">Public case files</a>
+          <a href="signup.html">Create a desk</a>
+          <a href="login.html">Sign in</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-col-title">Company &amp; Trust</p>
+        <div class="footer-links">
+          <a href="pricing.html">Commercial pricing ($)</a>
+          <a href="about.html">About &amp; leadership</a>
+          <a href="security.html">Azure cloud &amp; security</a>
+          <a href="legal.html">Privacy &amp; terms (NDPA)</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-col-title">Clearing Desk Contact</p>
+        <div class="footer-links">
+          <a href="tel:+23417008420">+234 1 700 8420</a>
+          <a href="mailto:desk@clearport.ai">desk@clearport.ai</a>
+          <a href="https://www.linkedin.com/company/clearport-ai" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          <a href="https://www.facebook.com/clearportai" target="_blank" rel="noopener noreferrer">Facebook ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Clearport Technologies Limited (RC 1984712). NDPA 2023 Compliant.</span>
+      <span>Powered by Microsoft Azure AI Document Intelligence, Azure OpenAI &amp; AKS</span>
+    </div>
+  </footer>
+
+  <script src="assets/desk.js"></script>
+  <script src="assets/motion.js?v=8"></script>
+</body>
+</html>

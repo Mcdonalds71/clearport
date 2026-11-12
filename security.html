@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Cloud architecture &amp; security · Clearport</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23181b19'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' fill='%23ffffff' font-family='Georgia,serif' font-size='38'>C.</text></svg>">
+  <link rel="stylesheet" href="assets/editorial.css?v=8">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header id="siteHeader">
+    <nav aria-label="Main">
+      <a href="index.html#specimen">Product</a>
+      <a href="dashboard.html?case=CP-8849">Case files</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="about.html">Company</a>
+    </nav>
+    <a class="brand" href="index.html">Clearport<span>.</span></a>
+    <nav aria-label="Workspace">
+      <a href="login.html">Sign in</a>
+      <a class="navcta" href="signup.html">Get started ↗</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="inner">
+      <p class="kicker">Microsoft Azure enterprise cloud · NDPA 2023 aligned</p>
+      <h1>Custody of<br><i>the file.</i></h1>
+      <p>Signed-in workspaces have isolated shipment records and PDF attachments. Commercial invoices, supplier unit pricing, bills of lading, and Form M banking dossiers are processed inside tenant-isolated Microsoft Azure infrastructure.</p>
+
+      <dl class="ledger" style="margin-top:42px;">
+        <div>
+          <dt>Workspace access</dt>
+          <dd>Passphrases use salted cryptographic derivation (PBKDF2 / scrypt) and Microsoft Entra ID SSO for enterprise clearing teams.</dd>
+        </div>
+        <div>
+          <dt>Document isolation</dt>
+          <dd>Each clearing agency workspace stores its consignments and source PDFs in isolated tenant containers. Public case files are illustrative and strictly separated from customer shipments.</dd>
+        </div>
+        <div>
+          <dt>Production Azure architecture</dt>
+          <dd>Azure AI Document Intelligence for multi-page OCR extraction, Azure OpenAI for assisted ECOWAS CET classification, and Azure Kubernetes Service (AKS) for workload orchestration.</dd>
+        </div>
+        <div>
+          <dt>Encryption &amp; key custody</dt>
+          <dd>Azure Blob Storage with AES-256 encryption at rest, TLS 1.3 in transit, and HSM-backed Customer-Managed Keys in Azure Key Vault.</dd>
+        </div>
+        <div>
+          <dt>Data protection (NDPA 2023)</dt>
+          <dd>Clearport’s enterprise security programme addresses access control, statutory 7-year audit retention, data subject rights, and incident response under the Nigeria Data Protection Act (NDPA) 2023.</dd>
+        </div>
+      </dl>
+
+      <a class="textlink" href="legal.html">Read Privacy &amp; Terms ↗</a>
+    </section>
+
+    <section class="footer-hero-banner" aria-label="Get started with Clearport">
+      <img loading="lazy" src="assets/img/apapa-berth.jpg" alt="Container terminal quayside at Apapa">
+      <div class="footer-hero-content">
+        <div>
+          <p class="kicker">For clearing teams &amp; importers</p>
+          <h2>Bring your paperwork<br>into <i>one workspace.</i></h2>
+          <p>Provision a private desk for your clearing agency or inspect our annotated pre-arrival case files.</p>
+        </div>
+        <div class="actions">
+          <a class="button white" href="signup.html">Create workspace ↗</a>
+          <a class="button ghost-light" href="dashboard.html?case=CP-8849">Explore case files ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-top">
+      <div>
+        <a class="brand" href="index.html">Clearport<span>.</span></a>
+        <p class="footer-meta">
+          <strong>Clearport Technologies Limited (CAC RC 1984712)</strong><br>
+          Built in Nigeria · Expanding across Africa &amp; Europe.<br>
+          24 Creek Road, Apapa Maritime District, Lagos<br>
+          Plot 14, Adeola Odeku Street, Victoria Island, Lagos, Nigeria
+        </p>
+      </div>
+      <div>
+        <p class="footer-col-title">Workspace</p>
+        <div class="footer-links">
+          <a href="index.html#specimen">Interactive specimen</a>
+          <a href="dashboard.html?case=CP-8849">Public case files</a>
+          <a href="signup.html">Create a desk</a>
+          <a href="login.html">Sign in</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-col-title">Company &amp; Trust</p>
+        <div class="footer-links">
+          <a href="pricing.html">Commercial pricing ($)</a>
+          <a href="about.html">About &amp; leadership</a>
+          <a href="security.html">Azure cloud &amp; security</a>
+          <a href="legal.html">Privacy &amp; terms (NDPA)</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-col-title">Clearing Desk Contact</p>
+        <div class="footer-links">
+          <a href="tel:+23417008420">+234 1 700 8420</a>
+          <a href="mailto:desk@clearport.ai">desk@clearport.ai</a>
+          <a href="https://www.linkedin.com/company/clearport-ai" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          <a href="https://www.facebook.com/clearportai" target="_blank" rel="noopener noreferrer">Facebook ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Clearport Technologies Limited (RC 1984712). NDPA 2023 Compliant.</span>
+      <span>Powered by Microsoft Azure AI Document Intelligence, Azure OpenAI &amp; AKS</span>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const header = document.getElementById('siteHeader');
+      if (header) {
+        window.addEventListener('scroll', function () {
+          header.classList.toggle('is-scrolled', window.scrollY > 16);
+        }, { passive: true });
+      }
+    })();
+  </script>
+  <script src="assets/motion.js?v=8"></script>
+</body>
+</html>
